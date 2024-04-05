@@ -1,13 +1,15 @@
 import React,{useState} from 'react';
 import axios from 'axios';
+// import {useParams} from 'react-router-dom'
 const Custsessions = (props) => {
+    var email1=props
     const [favorite,Setfavorite]=useState({
-        email:props.email,
         title:'',
         min:'',
-        sec:''
-
+        sec:'',
+        email:email1
     });
+
     const handleInput=(e)=>{
         const{name,value}=e.target;
         Setfavorite({...favorite,[name]:value})
@@ -16,7 +18,8 @@ const Custsessions = (props) => {
     const handleSubmit=(e)=>{
         e.preventDefault();
         try{
-            axios.post('',favorite).then(response=>{
+            favorite.email=email1;
+            axios.post('http://localhost:5000/favsess',favorite).then(response=>{
                 alert("Favorite Succesfully Added!");
                 Setfavorite({title:'',min:'',sec:''});
                 /*redirect to loggedin */
