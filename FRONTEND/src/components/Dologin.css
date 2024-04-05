@@ -8,6 +8,8 @@
     background-color:   rgb(0, 0, 0);
     height:70px;
 }
+
+
 #header-medi,#header-about,#header-login{
     padding: 0px 35px;
     font-weight: bold;
