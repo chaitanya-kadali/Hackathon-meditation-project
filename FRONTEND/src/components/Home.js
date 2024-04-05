@@ -13,8 +13,17 @@ const Home=()=>{
         window.location.href='/Guest'
     }
     
+    
 
-    return(
+
+
+
+
+
+
+
+
+return(
            <div className="Home">
             <div className="home-header">
                 <p id="home-head-medit">Meditation Timer</p>
