@@ -1,9 +1,9 @@
 import React, { useState, useEffect ,useRef } from 'react';
-import './Advguest.css';
+import './Loggedin.css'
 import audioFile1 from './media/bell-1.wav'
 import audioFile2 from './media/bell-2.wav'
 import audioFile3 from './media/bell-3.mpeg'
-const Advguest= () => {
+const Loggedin= () => {
   const [totalSeconds, setTotalSeconds] = useState(0);
   const [minutes, setMinutes] = useState(0);
   const [seconds, setSeconds] = useState(0);
@@ -12,7 +12,6 @@ const Advguest= () => {
   const audioRef1 = useRef(new Audio(audioFile1)); 
   const audioRef2 = useRef(new Audio(audioFile2));
   const audioRef3 = useRef(new Audio(audioFile3));
-
   
   useEffect(() => {
     let interval;
@@ -85,10 +84,16 @@ const Advguest= () => {
        <p id='header-about'>About</p>
      </div>
      <div className='navbar'>
-
+        
+         <li class="navbar-list">Auto Suggestions</li>
+         <li class="navbar-list">Add Favorites Sessions</li>
+         <li class="navbar-list" >How to meditate</li>
+        
+         
      </div>
-     <center>
+     <div className="hero">
         <div className='timer'>
+          <center>
       <p id='timer-time'>{minutes < 10 ? `0${minutes}` : minutes} : {seconds < 10 ? `0${seconds}` : seconds}</p>
       <div>
         <label htmlFor="minutes">Min: </label>
@@ -112,11 +117,19 @@ const Advguest= () => {
       <label for="bell2">Bell 2</label>
       <input type='radio' className="bells" id="bell3" name='bell'onChange={handleBellChange}/>
       <label for="bell3">Bell 3</label>
+      </center>
+      </div>
+      <div className='favorites'>
+            <center>
+              <p id='favorites-tag'>Favorites</p>
+            </center>
+      </div>
       </div>
 
-    </center>
+
+    
     </div>
   );
 };
 
-export default Advguest;
+export default Loggedin;

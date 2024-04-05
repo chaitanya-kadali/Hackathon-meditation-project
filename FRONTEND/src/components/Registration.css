@@ -1,0 +1,21 @@
+.header{
+    display:flex;
+    justify-content:space-between;
+    background-color: rgb(0, 0, 0);
+    height:70px;
+}
+#header-medi,#header-about{
+    padding: 0px 35px;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color:orange;
+    margin-top:10px;
+    
+}
+.Registration-form
+{
+    background-color: rgb(176, 172, 172);
+    width:40vw;
+    height:40vh;
+    border-radius: 25px;
+}

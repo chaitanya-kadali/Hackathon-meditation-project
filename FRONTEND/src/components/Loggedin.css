@@ -23,17 +23,43 @@
     
 }
 .navbar{
-    height:30px;
+    height:40px;
     width: 100vw;
-    border:2px solid white;
+    color:white;
+    list-style-type: none;
+    background-color: black;
+    display: flex;
+    flex-direction:row-reverse;
+
+}
+.navbar-list{
+    margin-right:20px;
 }
 .timer{
+    margin-top:50px;
     background-color: rgb(184, 176, 176);
     width:40vw;
     height:50vh;
     border-radius: 30px;
-
 }   
+.hero{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.favorites{
+    background-color: rgb(184, 176, 176);
+    width:25vw;
+    margin-top:50px;
+    height:50vh;
+    border-radius: 30px;
+
+}
+#favorites-tag{
+    font-weight: bold;
+    font-size:2rem;
+}
+
 
 #timer-time{
     font-size: 4.5rem;
