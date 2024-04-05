@@ -34,6 +34,11 @@
 }
 .navbar-list{
     margin-right:20px;
+    font-size:1.3rem;
+}
+.navbar-list:hover{
+    color:orange;
+    cursor:pointer;
 }
 .timer{
     margin-top:50px;

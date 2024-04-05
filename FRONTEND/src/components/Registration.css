@@ -1,10 +1,19 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+.Registration{
+    background-image: url('media/img.jpg');
+    background-size: cover;
+    height:100vh;
+}   
 .header{
     display:flex;
     justify-content:space-between;
     background-color: rgb(0, 0, 0);
     height:70px;
 }
-#header-medi,#header-about{
+#header-medi,#header-about,#header-regis{
     padding: 0px 35px;
     font-weight: bold;
     font-size: 1.5rem;
@@ -14,8 +23,23 @@
 }
 .Registration-form
 {
-    background-color: rgb(176, 172, 172);
+    margin-top:50px;
+    background-color: rgb(0, 0, 0);
     width:40vw;
     height:40vh;
     border-radius: 25px;
+}
+.reg-input{
+    font-size:2rem;
+    margin:6px;
+    margin-top: 15px;
+    border-radius: 10px;
+}
+.reg-input::placeholder{
+    font-size: 1.7rem;
+    color:black;
+}
+#reg-sub{
+    font-size: 1.5rem;
+    margin:10px;
 }

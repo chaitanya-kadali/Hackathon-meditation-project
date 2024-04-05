@@ -12,6 +12,7 @@ const Loggedin= () => {
   const audioRef1 = useRef(new Audio(audioFile1)); 
   const audioRef2 = useRef(new Audio(audioFile2));
   const audioRef3 = useRef(new Audio(audioFile3));
+
   
   useEffect(() => {
     let interval;
@@ -75,6 +76,9 @@ const Loggedin= () => {
   const handleBellChange = (e) => {
     setSelectedBell(e.target.id);
   };
+  const howmedit=()=>{
+    window.location.href='/loggedin/meditation';
+  }
 
 
   return (
@@ -86,8 +90,8 @@ const Loggedin= () => {
      <div className='navbar'>
         
          <li class="navbar-list">Auto Suggestions</li>
-         <li class="navbar-list">Add Favorites Sessions</li>
-         <li class="navbar-list" >How to meditate</li>
+         <li class="navbar-list">Research papers</li>
+         <li class="navbar-list" onClick={howmedit}>How to meditate</li>
         
          
      </div>

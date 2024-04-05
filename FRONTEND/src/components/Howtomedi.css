@@ -1,0 +1,44 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+.medit-point{
+    list-style-type: none;
+    margin-left:10px;
+}
+.medit-li{
+
+    padding-top: 95px;
+}
+#medit-head{
+    text-align: center;
+    font-family: Arial, Helvetica;
+    font-weight: bold;
+    font-size:2rem;
+    padding-top: 10px;
+   
+
+}
+.medit-content{
+    width:70vw;
+
+}
+.medit-image{
+    background-image: url(media/meditimg.jpg);
+    background-size: cover;
+    height: 40vh;
+    width:45vh;
+    position: fixed;
+    right:30px;
+    top:200px;
+}
+.medit-page{
+    height:100px;
+}
+.medit-head-class{
+    background-color: black;
+    width:100vw;
+    height:65px;
+    color:white;
+     position: fixed;
+}

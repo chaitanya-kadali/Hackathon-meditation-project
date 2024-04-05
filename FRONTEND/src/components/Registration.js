@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import axios from 'axios';
+import axios from 'axios';
 import './Registration.css';
 import {Link} from 'react-router-dom';  
 const Registration = () => {
@@ -15,10 +15,6 @@ const Registration = () => {
         const { name, value } = e.target;
         setUser({ ...user, [name]: value });
     };
-    const submitHandler=(e)=>{
-        e.preventDefault();
-        console.log(e);
-    }
 
     const submitHandler = (e) => {
         e.preventDefault();
@@ -27,10 +23,10 @@ const Registration = () => {
             alert('password must contain 6 letters');
          }
         try{
-            axios.post('',user).then(response=>{
+            axios.post('http://localhost:5000/user_inf',user).then(response=>{
                     alert("registered Succesfully!");
                     setUser({name:'',email:'',password:'',age:''});
-
+                    // LOGIN page redirected from here
                 })
         }
         catch(error){
@@ -38,37 +34,42 @@ const Registration = () => {
         }
        
     };
-
     return (
         <div className='Registration'>
             <div className='header'>
            <p id='header-medi'>Meditation Timer</p>
-            <p id='header-about'>About</p>
+           <p id="header-regis">Registration</p>
+            <p id='header-about'>About</p>  
            </div>
 
            <center>
             <div className='Registration-form'>
-            <form onSubmit={submitHandler}>
+            <form onSubmit={submitHandler} >
                 <input
                     type="text"
                     placeholder="Enter the username"
                     onChange={changeHandler}
                     value={user.name}
                     name="name"
+                    class="reg-input"
                 /><br />    
                 <input
                     type="email"
                     placeholder="Enter the email id"
                     onChange={changeHandler}
                     value={user.email}
-                    name="email"/>
+                    name="email"
+                    class="reg-input"/>
+                     
                     <br/>
                 <input
                     type="password"
                     placeholder="Enter the password"
                     onChange={changeHandler}
                     value={user.password}
-                    name="password"/>
+                    name="password"
+                    class="reg-input"/>
+                     
 
                     <br/>
                 <input
@@ -77,8 +78,9 @@ const Registration = () => {
                     onChange={changeHandler}
                     value={user.dob}
                     name="age"
+                    class="reg-input"
                 /><br />
-                <button type="submit" >Submit</button>
+                <button type="submit" id="reg-sub">Submit</button>
             </form>
             <Link to='/Login'>Already Registered ? click here to Login</Link>
             </div>
