@@ -1,0 +1,60 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+.Guest{
+    background-image: url('media/meditation-img.jpg');
+    background-size: cover;
+    height:100vh;
+}
+
+.header{
+    display:flex;
+    justify-content:space-between;
+    background-color: rgb(0, 0, 0);
+    height:70px;
+}
+#header-medi,#header-about{
+    padding: 0px 35px;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color:orange;
+    margin-top:10px;
+    
+}
+.navbar{
+    height:30px;
+    width: 100vw;
+    border:2px solid white;
+}
+.timer{
+    background-color: rgb(184, 176, 176);
+    width:40vw;
+    height:50vh;
+    border-radius: 30px;
+
+}   
+
+#timer-time{
+    font-size: 4.5rem;
+    font-weight: bold;
+}
+#minutes,#seconds{
+    cursor:pointer;
+}
+#button-str,#button-reset,.button-minset{
+    font-size:1.4rem;
+    margin:10px;
+    border-radius:7px;
+    cursor:pointer;
+}
+.bells{
+    width:30px;
+    height:20px;
+}
+.radio-label{
+    margin:0px;
+}
+label{
+    font-weight: bold;
+}
