@@ -8,8 +8,6 @@
     background-color:   rgb(0, 0, 0);
     height:70px;
 }
-
-
 #header-medi,#header-about,#header-login{
     padding: 0px 35px;
     font-weight: bold;
@@ -48,5 +46,9 @@
 #header-medi:hover,#header-login:hover,#header-about:hover{
     color:rgba(255, 255, 255, 0.744);
     cursor: pointer;
+}
+#login-link{
+    color:white;
+    margin-top: 10px;
 }
 

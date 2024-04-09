@@ -1,6 +1,6 @@
 import React,{useState} from 'react'; 
 import './Dologin.css'
-// import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import axios from 'axios'
 
 const Dologin= () => {
@@ -22,32 +22,35 @@ const submitHandler= async(e)=>{
    
     if (response.data.success) {
       alert("Logged in successfully!");
-      window.location.href='/loggedin/${user.email}'
+      window.location.href='/loggedin'
       // Perform additional actions upon successful login
     } 
-    // else {
-    //   // Handle unsuccessful login (optional)
-    //   alert("Login failed. Please try again.");
-    // }
   } catch (error) {
     console.error('Error by sai venkat occurred:', error);
     alert("invalid login details , please try again");
   }
+ 
+}
+const gotoab=()=>{
+  window.location.href='/about';
 
 }
-// const submitHandler=()=>
-// {
-//   alert("clicked submit button!");
-// }
+
   return (
     <div className='signup-div'>
-      <center>
+       <div className='header'>
+       <p id='header-medi'>Meditation Timer</p>
+       <p id='header-about' onClick={gotoab}>About</p>
+     </div>
+      <center>  
+        <div className='login-form'>
       <form onSubmit={submitHandler} >
         <input 
         type="text"
         placeholder='Enter User Id'
         value={user.email}
         name="email"
+        className="login-input"
         onChange={changeHandler}/>
         <br/>
          <input 
@@ -55,14 +58,17 @@ const submitHandler= async(e)=>{
         placeholder='Enter Password'
         value={user.password}
         name="password"
+        className="login-input"
         onChange={changeHandler}/>
         <br/>
         <br/>
-        <button>Submit</button>
+        <button id="login-sub">Submit</button>
       </form>
+      <Link id="login-link" to='/Registration'>Not Registred? Go to register</Link>
+      </div>
       <br/>
       <></>
-      {/* <Link to='/'>Not Registred? Go to register</Link> */}
+      
       </center>
     </div>
   )

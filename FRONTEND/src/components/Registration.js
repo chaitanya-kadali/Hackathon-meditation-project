@@ -26,6 +26,7 @@ const Registration = () => {
             axios.post('http://localhost:5000/user_inf',user).then(response=>{
                     alert("registered Succesfully!");
                     setUser({name:'',email:'',password:'',age:''});
+                    window.location.href = '/login';
                     // LOGIN page redirected from here
                 })
         }
@@ -34,12 +35,15 @@ const Registration = () => {
         }
        
     };
+    const goabout=()=>{
+        window.location.href='/about'
+    }
     return (
         <div className='Registration'>
             <div className='header'>
            <p id='header-medi'>Meditation Timer</p>
            <p id="header-regis">Registration</p>
-            <p id='header-about'>About</p>  
+            <p id='header-about' onClick={goabout}>About</p>  
            </div>
 
            <center>
@@ -82,7 +86,7 @@ const Registration = () => {
                 /><br />
                 <button type="submit" id="reg-sub">Submit</button>
             </form>
-            <Link to='/Login'>Already Registered ? click here to Login</Link>
+            <Link className="reg-link" to='/Login'>Already Registered ? click here to Login</Link>
             </div>
         </center>
         </div>

@@ -1,13 +1,11 @@
 import React,{useState} from 'react';
 import axios from 'axios';
-// import {useParams} from 'react-router-dom'
-const Custsessions = (props) => {
-    var email1=props
+const Custsessions = () => {
     const [favorite,Setfavorite]=useState({
         title:'',
-        min:'',
-        sec:'',
-        email:email1
+        min:0,
+        sec:0,
+        email:''
     });
 
     const handleInput=(e)=>{
@@ -18,10 +16,10 @@ const Custsessions = (props) => {
     const handleSubmit=(e)=>{
         e.preventDefault();
         try{
-            favorite.email=email1;
+            // favorite.email=email;
             axios.post('http://localhost:5000/favsess',favorite).then(response=>{
                 alert("Favorite Succesfully Added!");
-                Setfavorite({title:'',min:'',sec:''});
+                Setfavorite({title:'',min:'',sec:'',email:''});
                 /*redirect to loggedin */
             })
         }
@@ -32,12 +30,15 @@ const Custsessions = (props) => {
     };
   return (
     <div className="Addfavorite">
-       
-        <input type="text" placeholder='Enter the Title' name='title' value={favorite.title} onChange={handleInput} />
+           <form>
+     <input type="text" placeholder='Enter the Title' name='title' value={favorite.title} onChange={handleInput} />
         <input type="text" placeholder='Enter number of minutes'name='min' value={favorite.min} onChange={handleInput} />
         <input type="text" placeholder='Enter number of seconds' name='sec' value={favorite.sec} onChange={handleInput} />
-       <button onClick={handleSubmit}>Add the favorite</button>
-    </div>
+        <input type="text" placeholder='Enter email' name='email' value={favorite.email} onChange={handleInput} />
+       <button onClick={handleSubmit}>Add the favorite</button> 
+       </form>
+    
+     </div>
   )
 }
 
