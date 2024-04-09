@@ -1,4 +1,4 @@
-import React from "react";
+    import React from "react";
 // import {BrowserRouter,Routes,Route} from "react-router-dom";
 //import { Link } from "react-router-dom";
 import './Home.css';
@@ -13,16 +13,6 @@ const Home=()=>{
         window.location.href='/Guest'
     }
     
-    
-
-
-
-
-
-
-
-
-
 return(
            <div className="Home">
             <div className="home-header">

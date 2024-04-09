@@ -7,6 +7,8 @@ import Home from './components/Home';
 import Loggedin from './components/Loggedin';
 import Howtomedti from './components/Howtomedti';
 import Custsessions from './components/Custsessions';
+import About from './components/About';
+import Autosug from './components/Autosug';
 const App = () => {
   return (
   //  
@@ -25,6 +27,10 @@ const App = () => {
      <Route path='/loggedin' element={<Loggedin/>}/>
      <Route path='/loggedin/meditation' element={<Howtomedti/>}/>
      <Route path='/loggedin/addfav' element={<Custsessions.js/>}/>
+     <Route path='/About' element={<About/>}/>
+     <Route path='/loggedin/Autosug' element={<Autosug/>}/>
+
+
      </Routes>
       </BrowserRouter>
   </>
