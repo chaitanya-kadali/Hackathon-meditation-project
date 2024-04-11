@@ -3,8 +3,8 @@ import './Loggedin.css'
 import audioFile1 from './media/bell-1.wav'
 import audioFile2 from './media/bell-2.wav'
 import audioFile3 from './media/bell-3.mpeg'
+import { useLocation } from 'react-router-dom';
 const Loggedin= () => {
-  // const { email } = props.match.params;
   const [totalSeconds, setTotalSeconds] = useState(0);
   const [minutes, setMinutes] = useState(0);
   const [seconds, setSeconds] = useState(0);
@@ -13,6 +13,8 @@ const Loggedin= () => {
   const audioRef1 = useRef(new Audio(audioFile1)); 
   const audioRef2 = useRef(new Audio(audioFile2));
   const audioRef3 = useRef(new Audio(audioFile3));
+  // let {search}=useLocation();
+  // let params= new URLSearchParams(search);
   let emaili;
 
   
@@ -134,6 +136,13 @@ const Loggedin= () => {
       <label for="bell3">Bell 3</label>
       </center>
       </div>
+      <div className="favorites">
+        <center><p id="favorites-tag"> Favorites</p></center>
+        <center><p id="favorites-addses" onClick={clickAdd}>Add sessions</p></center>
+        <p id="favorites-list">the content is here</p>
+
+      </div>
+
      
       </div>
 

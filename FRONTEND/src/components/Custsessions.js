@@ -1,5 +1,7 @@
 import React,{useState} from 'react';
 import axios from 'axios';
+import './Custsessions.css';
+
 const Custsessions = () => {
     const [favorite,Setfavorite]=useState({
         title:'',
@@ -8,11 +10,10 @@ const Custsessions = () => {
         email:''
     });
 
-    const handleInput=(e)=>{
-        const{name,value}=e.target;
-        Setfavorite({...favorite,[name]:value})
-
-    }
+    const changeHandler = (e) => {
+        const { name, value } = e.target;
+        Setfavorite({ ...favorite, [name]: value });
+    };
     const handleSubmit=(e)=>{
         e.preventDefault();
         try{
@@ -21,6 +22,7 @@ const Custsessions = () => {
                 alert("Favorite Succesfully Added!");
                 Setfavorite({title:'',min:'',sec:'',email:''});
                 /*redirect to loggedin */
+                window.location.href='/loggedin';
             })
         }
         catch(error)
@@ -30,15 +32,26 @@ const Custsessions = () => {
     };
   return (
     <div className="Addfavorite">
-           <form>
-     <input type="text" placeholder='Enter the Title' name='title' value={favorite.title} onChange={handleInput} />
-        <input type="text" placeholder='Enter number of minutes'name='min' value={favorite.min} onChange={handleInput} />
-        <input type="text" placeholder='Enter number of seconds' name='sec' value={favorite.sec} onChange={handleInput} />
-        <input type="text" placeholder='Enter email' name='email' value={favorite.email} onChange={handleInput} />
-       <button onClick={handleSubmit}>Add the favorite</button> 
+         <div className='addfav-main'>
+      <div className='header'>
+        <p id='header-medi'>Meditation Timer</p>
+        <p id='header-about'>About</p>
+      </div>
+      </div>
+        <center>
+           <form class="form" onSubmit={handleSubmit}>
+     <input class="form-col" type="text" placeholder='Enter the Title' name='title' value={favorite.title} onChange={changeHandler} />
+     <br/>
+        <input class="form-col" type="text" placeholder='Enter number of minutes'name='min' value={favorite.min} onChange={changeHandler} />
+        <br/>
+        <input class="form-col" type="text" placeholder='Enter number of seconds' name='sec' value={favorite.sec} onChange={changeHandler} />
+        <br/>
+        <input class="form-col" type="text" placeholder='Enter email' name='email' value={favorite.email} onChange={changeHandler} />
+       <br/>
+       <button id="addfav-btn">Add the favorite</button> 
        </form>
-    
-     </div>
+       </center>
+    </div>
   )
 }
 

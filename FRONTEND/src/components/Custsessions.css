@@ -1,0 +1,28 @@
+*{
+    padding:0px;
+    margin:0px;
+}
+.form-col{
+    color:rgb(0, 0, 0);
+    font-size:1.7rem;
+    margin:10px;
+    border-radius: 10px;
+    
+}
+.Addfavorite{
+   background-image: url("media/img3.webp");
+   height:100vh;
+   background-size: cover;
+}
+
+.form{
+    background-color: rgba(128, 128, 128, 0.274);
+    width:40vw;
+    height:35vh;
+    margin-top: 100px;
+    border-radius:15px;
+}
+#addfav-btn{
+    font-size: 1.2rem;
+    border-radius: 4px;
+}

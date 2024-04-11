@@ -22,8 +22,7 @@ const submitHandler= async(e)=>{
    
     if (response.data.success) {
       alert("Logged in successfully!");
-      window.location.href='/loggedin'
-      // Perform additional actions upon successful login
+      // window.location.href={`/loggedin?email=${user.email}`};
     } 
   } catch (error) {
     console.error('Error by sai venkat occurred:', error);
