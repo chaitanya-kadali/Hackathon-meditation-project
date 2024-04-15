@@ -17,16 +17,17 @@
     
 }
 .signup-div{
-    background-image: url('media/img2\ \(2\).jpeg');
+    background-image: url('media/Green\ image\ of\ girl\ dissolving\ \ filled\ frame.png');
     background-size:cover;
     height:100vh; 
+    /* background-color: rgba(0, 0, 0, 0.573); */
 }   
 .login-form
 {
     margin-top:50px;
-    background-color: rgba(206, 200, 200, 0.128);
+    background-color: rgba(4, 96, 55, 0.639);
     width:40vw;
-    height:30vh;
+    height:40vh;
     border-radius: 25px;
 }
 .login-input{
@@ -40,15 +41,38 @@
     color:black;
 }
 #login-sub{
-    font-size: 1.5rem;
-    border-radius: 5px;
+    font-size:1.4rem;
+    margin:10px;
+    border: 2px solid transparent;
+    /* border-color: #000000; */
+
+    display: inline-block;
+    padding: 12px 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 80px;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.2s, color 0.3s;
+}
+#login-sub:hover{
+    background-color: #4caf60;
+    border-color: #000000;
 }
 #header-medi:hover,#header-login:hover,#header-about:hover{
     color:rgba(255, 255, 255, 0.744);
     cursor: pointer;
 }
-#login-link{
-    color:white;
+
+
+
+#login-link
+{
+    color:rgb(255, 255, 255);
     margin-top: 10px;
 }
-
+#login-link:hover
+{
+    color:rgb(0, 124, 240);
+}

@@ -9,23 +9,24 @@ const Dologin= () => {
   const changeHandler = (e) => {
     const { name, value } = e.target;
     setUser({ ...user, [name]: value });
-};
+}; 
 const submitHandler= async(e)=>{
   e.preventDefault();
   if(user.password.length<6)
   {
     alert('password must contain 6 letters');
   }
-  // runnning clean till here
+  
   try {
     const response = await axios.post('http://localhost:5000/login', user);
    
     if (response.data.success) {
       alert("Logged in successfully!");
-      // window.location.href={`/loggedin?email=${user.email}`};
+
+      window.location.href=`/loggedin?email=${user.email}`;        // throwing email to logged in
     } 
   } catch (error) {
-    console.error('Error by sai venkat occurred:', error);
+    console.error('Error occurred:', error);
     alert("invalid login details , please try again");
   }
  
@@ -46,9 +47,9 @@ const gotoab=()=>{
       <form onSubmit={submitHandler} >
         <input 
         type="text"
-        placeholder='Enter User Id'
+        placeholder='Enter Email Id'
         value={user.email}
-        name="email"
+        name="email" 
         className="login-input"
         onChange={changeHandler}/>
         <br/>

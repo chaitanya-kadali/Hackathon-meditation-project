@@ -6,7 +6,7 @@
 .Home{
     background-color: rgba(255, 255, 255, 0.605);
     height: 100vh;
-    background-image: url("media/homebackimg.jpg");
+    background-image: url("media/for\ home\ \ .png");
     background-size: cover;
 }
 .home-header{
@@ -49,6 +49,9 @@
 #home-medit-matter{
     margin-left:50px;
     margin-top:40px;
+    -webkit-text-stroke: 0.6px black; 
+    /* For webkit browsers (Chrome, Safari) */
+  
 }
 #home-head-medit{
     padding-left:250px;

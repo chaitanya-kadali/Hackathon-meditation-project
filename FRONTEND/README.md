@@ -1,3 +1,22 @@
+
+the references --
+for background images 
+ www.pexels.com
+ https://unsplash.com/ the best **
+ https://dreamstudio.ai/generate the best ultra pro
+
+
+
+
+
+
+
+off to by default matter 
+         |
+         \/
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

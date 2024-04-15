@@ -18,7 +18,7 @@ const Registration = () => {
 
     const submitHandler = (e) => {
         e.preventDefault();
-        if(user.password.length<6)
+        if(user.password.length<6) 
         {
             alert('password must contain 6 letters');
          }
@@ -38,18 +38,26 @@ const Registration = () => {
     const goabout=()=>{
         window.location.href='/about'
     }
+    const gologin=()=>{
+        window.location.href='/login'
+    }
     return (
         <div className='Registration'>
             <div className='header'>
            <p id='header-medi'>Meditation Timer</p>
+           <center>
            <p id="header-regis">Registration</p>
+           </center>
+           <div className="header-right">
+           <p id="header-log" onClick={gologin}>Login</p>
             <p id='header-about' onClick={goabout}>About</p>  
+            </div>
            </div>
 
            <center>
             <div className='Registration-form'>
             <form onSubmit={submitHandler} >
-                <input
+                <input 
                     type="text"
                     placeholder="Enter the username"
                     onChange={changeHandler}
@@ -89,6 +97,7 @@ const Registration = () => {
             <Link className="reg-link" to='/Login'>Already Registered ? click here to Login</Link>
             </div>
         </center>
+   
         </div>
     );
 };

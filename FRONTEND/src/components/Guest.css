@@ -3,7 +3,7 @@
     padding:0px;
 }
 .Guest{
-    background-image: url('media/meditation-img.jpg');
+    background-image: url('media/space-girl-timer.png');
     background-size: cover;
     height:100vh;
 }
@@ -40,9 +40,22 @@
 #button-str,#button-reset,.button-minset{
     font-size:1.4rem;
     margin:10px;
-    border-radius:7px;
-    cursor:pointer;
+
+   
+
+    display: inline-block;
+    padding: 12px 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 80px;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.2s, color 0.3s;
 }
+#button-str:hover,#button-reset:hover,.button-minset:hover{
+    background-color: #4c86af;
+} 
 .bells{
     width:30px;
     height:20px;

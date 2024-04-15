@@ -15,8 +15,8 @@ return(
             <div className="home-header">
                 <p id="home-head-medit">Meditation Timer</p>
                 <div className="nav-div">
-                   <li onClick={toguest} className="nav-div-li">basic Features</li>
-                     <li onClick={toreg} className="nav-div-li" id="nav-div-adv">Advanced features</li>
+                   <li onClick={toguest} className="nav-div-li">Basic Features</li>
+                     <li onClick={toreg} className="nav-div-li" id="nav-div-adv">Advanced Features</li>
                 </div>
             </div>
             <div className="home-navbar"></div>

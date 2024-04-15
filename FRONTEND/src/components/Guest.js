@@ -76,12 +76,17 @@ const Guest = () => {
     setSelectedBell(e.target.id);
   };
 
-
+  const gomed=()=>{
+    windows.location.href='/';
+  }
+  const goabout=()=>{
+    windows.location.href='/About';
+  }
   return (
     <div className='Guest'>
      <div className='header'>
-       <p id='header-medi'>Meditation Timer</p>
-       <p id='header-about'>About</p>
+     <p id='header-medi' onClick={gomed}>Meditation Timer</p>
+       <p id='header-about'onClick={goabout}>About</p>
      </div>
      <center>
         <div className='timer'>
