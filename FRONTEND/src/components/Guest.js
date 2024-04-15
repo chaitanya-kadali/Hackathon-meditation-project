@@ -77,20 +77,20 @@ const Guest = () => {
   };
 
   const gomed=()=>{
-    windows.location.href='/';
+    window.location.href='/';
   }
   const goabout=()=>{
-    windows.location.href='/About';
+    window.location.href='/About';
   }
   return (
     <div className='Guest'>
      <div className='header'>
-     <p id='header-medi' onClick={gomed}>Meditation Timer</p>
-       <p id='header-about'onClick={goabout}>About</p>
+     <p id='header-medit' onClick={gomed}>Meditation Timer</p>
+       <p id='header-abou'onClick={goabout}>About</p>
      </div>
      <center>
         <div className='timer'>
-      <p id='timer-time'>{minutes < 10 ? `0${minutes}` : minutes} : {seconds < 10 ? `0${seconds}` : seconds}</p>
+      <p id='timer-times'>{minutes < 10 ? `0${minutes}` : minutes} : {seconds < 10 ? `0${seconds}` : seconds}</p>
       <div>
         <label htmlFor="minutes">Min: </label>
         <input id="minutes" type="range" min="0" max="120" step="1" value={minutes} onChange={handleMinuteChange} />

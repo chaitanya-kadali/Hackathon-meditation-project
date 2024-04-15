@@ -7,35 +7,38 @@
     background-size: cover;
     height:100vh;
 }   
-.header{
+.heade{
     display:flex;
     justify-content:space-between;
     background-color: rgb(0, 0, 0);
     height:70px;
 }
-#header-medi,#header-about,#header-regis,#header-log{
+#heade-medi,#heade-about,#heade-regis,#heade-log{
     padding: 0px 35px;
     font-weight: bold;
     font-size: 1.5rem;
-    color:orange;
+    color:rgb(17, 175, 193);
     margin-top:10px;
     
 }
-#header-log:hover{
-   color:rgba(255, 255, 255, 0.744);
+#heade-log:hover,#heade-about:hover,#heade-medi:hover{
+   color:rgb(162, 229, 236);
+   cursor:pointer;
 }
-.header-right{
+.heade-right{
     
     width:300px;
     display:flex;
 }
 .Registration-form
 {
-    margin-top:50px;
+    margin-top:80px;
     background-color: rgba(0, 0, 0, 0.628);
     width:40vw;
-    height:50vh;
+    height:45vh;
     border-radius: 25px;
+    margin-left:150px;
+    text-align: center;
 }
 .reg-input{
     font-size:2rem;
@@ -64,7 +67,7 @@
     transition: background-color 0.2s, color 0.3s;
 }
 #reg-sub:hover{
-    background-color: #4CAF50;
+    background-color: rgb(17, 175, 193);
 }
 .reg-link
 {

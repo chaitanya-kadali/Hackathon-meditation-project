@@ -2,6 +2,21 @@
     padding:0px;
     margin:0px;
 }
+.header-cust{
+    background-color: black;
+    width:100vw;
+    height:70px;
+    color:rgb(17, 175, 193);
+    font-size:1.7rem;
+    font-weight:bold;
+    display:flex;
+    justify-content:space-between;
+
+}
+#header-cust-medi,#header-cust-about
+{
+    padding:15px;
+}
 .form-col{
     color:rgb(0, 0, 0);
     font-size:1.7rem;
@@ -16,13 +31,26 @@
 }
 
 .form{
-    background-color: rgba(128, 128, 128, 0.274);
+    background-color: rgba(34, 138, 154, 0.274);
     width:40vw;
-    height:35vh;
-    margin-top: 100px;
+    height:40vh;
+    margin-top: 60px;
     border-radius:15px;
 }
 #addfav-btn{
-    font-size: 1.2rem;
-    border-radius: 4px;
+    margin-top:15px;
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.2s, color 0.3s;
+    background-color: rgb(17, 175, 193);
+}
+#addfav-btn:hover{
+    background-color:rgb(162, 229, 236);
 }

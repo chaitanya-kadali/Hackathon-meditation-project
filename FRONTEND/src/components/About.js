@@ -6,8 +6,8 @@ const About=()=>{
     }
     return(
         <div className="about">
-        <div className='header'>
-        <p id='header-medi'onClick={tohome}>Meditation Timer</p>
+        <div className='eader'>
+        <p id='eader-medi'onClick={tohome}>Meditation Timer</p>
       </div>
     <ul id="text-text">
     We can use the website by  proper understanding and by the extra features available compared to several websites.

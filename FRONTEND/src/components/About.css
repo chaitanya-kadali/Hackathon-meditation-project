@@ -7,4 +7,16 @@
     font-family: cursive;
     font-size: 5rem;
     font-weight: bold;
+    margin-top:65px;
+}
+.eader{
+    width:100vw;
+    height:70px;
+    background-color: black;
+    color:rgb(17, 175, 193);
+    font-size: 1.7rem;
+    font-weight: bold;
+}
+#eader-medi{
+    padding:20px;
 }
