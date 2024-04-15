@@ -1,51 +1,79 @@
-import React, { useState } from 'react';
-import './Autosug.css'
+import React, { useState,useEffect } from 'react';
+import './Autosug.css';
+import axios from 'axios';
 
 function Autosug() {
-  const [age, setAge] = useState('');
+ var [UserInfo, setUserInfo] = useState([]);
+  // Fetch userinfo from the server on component mount
+  useEffect(() => {
+    retAgeofUser();       // runs it by birth automatically
+  }, []);
 
-  const handleAgeInput = (event) => {
-    setAge(event.target.value);
-  };
 
-  const checkAge = () => {
+  const queryParams = new URLSearchParams(window.location.search);  // recieving all values sent through url bu ANY one
+  var emailog = queryParams.get('email');
+  // successfully fetched email . checked 
+
+const retAgeofUser=async()=>
+  {  try {
+      console.log(emailog);
+      const response = await axios.get(`http://localhost:5000/user_inf/${emailog}`);
+      setUserInfo(response.data[0]);
+      } catch (error) {
+      console.log("email not found");
+    }
+}
+
+ 
+  const [sugdur, setDur] = useState("--");
+  const sugDur = async() => {
+    let duration;
+    let age =UserInfo.age;
+    console.log("age is : ",age);
     if(5<=age && age <=12)
         {
-            alert("7 min");
+            duration=7;
         }
-        else if(13<=age<=18)
+        else if(13<=age && age<=18)
         {
-            alert("15 min");
+            duration=15;
         }
-        else if(19<=age<=30)
+        else if(19<=age && age<=30)
         {
-            alert("25 min");
+           duration=25;
         }
         else if(31<=age && age<=65)
         {
-            alert("30 min");
+          duration=25;
+         
         }
-        else if(66<=age)
+        else if(age>=66 && age<=130)
         {
-            alert("25 min");
+            duration=25;
+        }else{
+          duration="invalid";
         }
+        
+        setDur(duration+ " minutes");
     }       
   
 
   return (
-    <div>
+    <div className='suggester'>
         <center>
-        <div className='header'>
-       <p id='header-medi'>Meditation Timer</p>
-       <p id='header-about'>About</p>
-     </div>
-      <label>
-        Enter your age:
-        <input type="number" value={age} id="enter-it" onChange={handleAgeInput} />
-      </label>
-      <br></br>
-      <button onClick={checkAge}>Check Age</button>
-      </center>
+          <div className='header'>
+                  <p id='header-medi'>Meditation Timer</p>
+                  <p id='header-about'>About</p>
+           </div>
+     
+           <div className='sug-form'>
+                <h2> Your Suggested duration for meditation is :</h2>
+                 <br></br>
+                 <h2> {sugdur}</h2>
+                <button onClick={sugDur} id="sug-but">Suggest Duration</button>
+           </div>
+        </center>
+      
     </div>
   );
 }

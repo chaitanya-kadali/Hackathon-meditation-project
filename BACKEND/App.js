@@ -42,7 +42,8 @@ const Favsess=mongoose.model("FavSess",newFavSess);
 
 // Routes
 app.get('/user_inf/:email', async (req, res) => {
-  const {email} = req.params; // front_info is taken from fornt_End
+  const {email} = req.params; // email_info is recieved from fornt_End by passing it to url ( params :) )
+                              // user_info have to be thrown to front
   try {
     const matched = await User.find({ "email": email });
 
@@ -53,7 +54,7 @@ app.get('/user_inf/:email', async (req, res) => {
 });
 
 
-
+// registration
 app.post('/user_inf', async (req, res) => {
   const { name, email, password, age } = req.body;
   
@@ -75,17 +76,17 @@ app.post('/user_inf', async (req, res) => {
   }
 });
 
-app.post('/user_inf/favsess', async (req, res) => {
+// app.post('/user_inf/favsess', async (req, res) => {
   
-  const { title,min,sec,email} = req.body;
-  const favSess_inf = new Favsess({ title,min,sec, email });
-  try {
-    await favSess_inf.save();
-    res.status(201).json(favSess_inf);
-  } catch (error) {
-    res.status(400).json({ error: error.message });
-  }
-});
+//   const { title,min,sec,email} = req.body;
+//   const favSess_inf = new Favsess({ title,min,sec, email });
+//   try {
+//     await favSess_inf.save();
+//     res.status(201).json(favSess_inf);
+//   } catch (error) {
+//     res.status(400).json({ error: error.message });
+//   }
+// });
 
 // intake favsess and post it to database
 app.post('/favsess', async (req, res) => {
@@ -102,7 +103,7 @@ app.post('/favsess', async (req, res) => {
 
 // GET the favsess of the user FROM DB and return it to client
 app.get('/favsess/:email', async (req, res) => {
-  const {email} = req.params; // front_info is taken from fornt_End
+  const {email} = req.params; // front_info ->email is taken from fornt_End
   try {
     const matched = await Favsess.find({ "email": email });
 
@@ -111,10 +112,6 @@ app.get('/favsess/:email', async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
-
-
-
-
 
 app.post('/login', async (req, res) => {
   const { email, password } = req.body;
@@ -143,8 +140,17 @@ app.post('/login', async (req, res) => {
     }
 });
 
-
-
+// for get age from database
+app.get('/age/:email', async (req, res) => {
+  const {email} = req.params; // front_info is taken from fornt_End
+  try {
+    const matched = await User.find({ "email": email });
+      // const ageret = matched[age];
+    res.status(200).json(matched);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
 
 
 // Server

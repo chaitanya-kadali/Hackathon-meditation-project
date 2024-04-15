@@ -4,7 +4,10 @@ import audioFile1 from './media/bell-1.wav'
 import audioFile2 from './media/bell-2.wav'
 import audioFile3 from './media/bell-3.mpeg'
 import { useLocation } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
 const Loggedin= () => {
+
   const [totalSeconds, setTotalSeconds] = useState(0);
   const [minutes, setMinutes] = useState(0);
   const [seconds, setSeconds] = useState(0);
@@ -13,9 +16,12 @@ const Loggedin= () => {
   const audioRef1 = useRef(new Audio(audioFile1)); 
   const audioRef2 = useRef(new Audio(audioFile2));
   const audioRef3 = useRef(new Audio(audioFile3));
-  // let {search}=useLocation();
-  // let params= new URLSearchParams(search);
-  let emaili;
+
+
+  const queryParams = new URLSearchParams(window.location.search); // recieving all values sent through url form ANY ! where
+  const emailog = queryParams.get('email'); // fetching only email value out of all values
+                                            // 'email' is taken as email= mention in the url from sender
+   // checked email recieved : positive ref- emailog
 
   
   useEffect(() => {
@@ -50,7 +56,20 @@ const Loggedin= () => {
     setMinutes(Math.floor(totalSeconds / 60));
     setSeconds(totalSeconds % 60);
   }, [totalSeconds]);
+  var [favSesses, setFavSess] = useState([]);
+  useEffect(() => {
+    getFavSess();       // runs it by birth automatically
+  }, []);
 
+  const getFavSess=async()=>{
+    try {
+      console.log(emailog);
+      const response = await axios.get(`http://localhost:5000/favsess/${emailog}`);
+      setFavSess(response.data);
+      } catch (error) {
+      console.log("favsess not found");
+    }
+  }
   const handleStartStop = () => {
     setIsRunning(!isRunning);
   };
@@ -88,12 +107,12 @@ const Loggedin= () => {
   }
   
   const autogo=()=>{
-    window.location.href='/loggedin/Autosug';
+    window.location.href=`/loggedin/Autosug?email=${emailog}`;   //  throwing email for automatic dur suggester
   }
-  
-// const gothere=()=>{
-//   alert('{ email }');
-// }
+  const onDeleteFav=(fid)=>{
+    alert("under construction ");
+  }
+
   return (
     <div className='Guest'>
      <div className='header'>
@@ -102,7 +121,7 @@ const Loggedin= () => {
      </div>
      <div className='navbar'>
         
-         <li class="navbar-list" onClick={autogo}>Auto Suggestions</li>
+         <li class="navbar-list" onClick={autogo}>Auto Suggestions</li>       
          <li class="navbar-list" onClick={howmedit}>How to meditate</li>
          
         
@@ -139,15 +158,21 @@ const Loggedin= () => {
       <div className="favorites">
         <center><p id="favorites-tag"> Favorites</p></center>
         <center><p id="favorites-addses" onClick={clickAdd}>Add sessions</p></center>
-        <p id="favorites-list">the content is here</p>
+        <p id="favorites-list">the favsess list  is here
+        { favSesses.map( (each_elem)=>(
+                                <li key={each_elem._id}>
+                                Title - {each_elem.title} {"->"} {each_elem.min}mins : {each_elem.sec} secs{' '}
+                                <button onClick={() => onDeleteFav(each_elem._id)}>Delete</button>
+                              </li>
+                            )
+                        )
+         }</p>
 
       </div>
 
      
       </div>
 
-
-    
     </div>
   );
 };

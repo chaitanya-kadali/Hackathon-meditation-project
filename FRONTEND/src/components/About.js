@@ -15,7 +15,7 @@ const About=()=>{
     <li>Producing information about how to meditate.</li>
     <li>Giving auto suggestions of session durations.</li>
     <li>Providing original and certified  research information  about meditation.</li></ul>
-    <center><p class="thankyou">Thank you</p></center>
+    <center><p class="thankyou">Thank you !</p></center>
     </div>
     )
 }

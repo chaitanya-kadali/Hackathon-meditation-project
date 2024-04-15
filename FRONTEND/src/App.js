@@ -2,6 +2,7 @@ import React from 'react';
 import Registration from './components/Registration';
 import Dologin from './components/Dologin';
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
+// import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Guest from './components/Guest';
 import Home from './components/Home';
 import Loggedin from './components/Loggedin';
@@ -12,6 +13,8 @@ import Autosug from './components/Autosug';
 const App = () => {
   return (
   <>
+  {/* <Router>
+      <Switch> */}
     <BrowserRouter>
     <Routes>
       <Route path='/' element={<Home/>}/>
@@ -20,14 +23,16 @@ const App = () => {
        <Route path='/Guest' element={<Guest/>}/>
        <Route path='/loggedin' element={<Loggedin/>}/>
        <Route path='/loggedin/meditation' element={<Howtomedti/>}/>
-       <Route path='/loggedin/addfav' element={<Custsessions.js/>}/>
+       {/* <Route path='/loggedin/addfav' element={<Custsessions.js/>}/> */}
        <Route path='/About' element={<About/>}/>
        <Route path='/loggedin/Autosug' element={<Autosug/>}/>
 
 
-       </Routes>
-        </BrowserRouter>
-       
+        </Routes>
+        </BrowserRouter> 
+    {/* </Switch>
+
+</Router>        */}
   </>
   
   )
