@@ -13,7 +13,7 @@
 #medit-head{
     text-align: center;
     font-family: Arial, Helvetica;
-    font-weight: bold;
+    font-weight: bolder;
     font-size:2rem;
     padding-top: 10px;
    
@@ -39,6 +39,6 @@
     background-color: black;
     width:100vw;
     height:65px;
-    color:white;
-     position: fixed;
+    color:rgb(17, 175, 193);
+    position: fixed;
 }

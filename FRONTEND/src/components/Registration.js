@@ -38,23 +38,26 @@ const Registration = () => {
     const goabout=()=>{
         window.location.href='/about'
     }
+    const gomed=()=>{
+        window.location.href='/';
+      }
     const gologin=()=>{
         window.location.href='/login'
     }
     return (
         <div className='Registration'>
-            <div className='header'>
-           <p id='header-medi'>Meditation Timer</p>
+            <div className='heade'>
+           <p id='heade-medi'onClick={gomed}>Meditation Timer</p>
            <center>
-           <p id="header-regis">Registration</p>
+           <p id="heade-regis">Registration</p>
            </center>
-           <div className="header-right">
-           <p id="header-log" onClick={gologin}>Login</p>
-            <p id='header-about' onClick={goabout}>About</p>  
+           <div className="heade-right">
+           <p id="heade-log" onClick={gologin}>Login</p>
+            <p id='heade-about' onClick={goabout}>About</p>  
             </div>
            </div>
 
-           <center>
+           
             <div className='Registration-form'>
             <form onSubmit={submitHandler} >
                 <input 
@@ -96,7 +99,7 @@ const Registration = () => {
             </form>
             <Link className="reg-link" to='/Login'>Already Registered ? click here to Login</Link>
             </div>
-        </center>
+        
    
         </div>
     );

@@ -6,7 +6,7 @@
 .Home{
     background-color: rgba(255, 255, 255, 0.605);
     height: 100vh;
-    background-image: url("media/for\ home\ \ .png");
+    background-image: url("media/homeback.jpg");
     background-size: cover;
 }
 .home-header{
@@ -38,18 +38,19 @@
 }
 .home-meditation{
     width:50vw;
-    color:rgb(255, 255, 255);
+    color:#ffffff;
     font-size:1.3rem;
     font-family: Arial;
-    font-weight:550;
+    font-weight:bolder;
+    text-align: center;
     position: absolute;
     top:60px;
-    right:20px;
+    left:20px;
 }
 #home-medit-matter{
     margin-left:50px;
-    margin-top:40px;
-    -webkit-text-stroke: 0.6px black; 
+    margin-top:60px;
+    
     /* For webkit browsers (Chrome, Safari) */
   
 }

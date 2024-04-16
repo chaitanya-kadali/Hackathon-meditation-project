@@ -61,9 +61,9 @@ const retAgeofUser=async()=>
   return (
     <div className='suggester'>
         <center>
-          <div className='header'>
-                  <p id='header-medi'>Meditation Timer</p>
-                  <p id='header-about'>About</p>
+          <div className='header-auto'>
+                  <p id='header-auto-medi'>Meditation Timer</p>
+                  <p id='header-auto-about'>About</p>
            </div>
      
            <div className='sug-form'>

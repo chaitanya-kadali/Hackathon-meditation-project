@@ -13,9 +13,8 @@ import Autosug from './components/Autosug';
 const App = () => {
   return (
   <>
-  {/* <Router>
-      <Switch> */}
-    <BrowserRouter>
+  
+    {/* <BrowserRouter>
     <Routes>
       <Route path='/' element={<Home/>}/>
        <Route path='/Registration' element={<Registration/>}/>
@@ -23,16 +22,13 @@ const App = () => {
        <Route path='/Guest' element={<Guest/>}/>
        <Route path='/loggedin' element={<Loggedin/>}/>
        <Route path='/loggedin/meditation' element={<Howtomedti/>}/>
-       {/* <Route path='/loggedin/addfav' element={<Custsessions.js/>}/> */}
+       <Route path='/loggedin/addfav' element={<Custsessions.js/>}/>
        <Route path='/About' element={<About/>}/>
        <Route path='/loggedin/Autosug' element={<Autosug/>}/>
+       </Routes>
+      </BrowserRouter>  */}
+     <Custsessions/>
 
-
-        </Routes>
-        </BrowserRouter> 
-    {/* </Switch>
-
-</Router>        */}
   </>
   
   )

@@ -8,17 +8,18 @@
     height:100vh;
 }
 
-.header{
+.headr{
     display:flex;
     justify-content:space-between;
-    background-color: rgba(0, 0, 0, 0.265);
+    background-color: rgb(0, 0, 0);
     height:70px;
+    width:100vw;
 }
-#header-medi,#header-about{
+#headr-medi,#headr-about{
     padding: 0px 35px;
     font-weight: bold;
     font-size: 1.5rem;
-    color:rgb(126, 68, 219);
+    color:rgb(17, 175, 193);
     margin-top:10px;
     
 }
@@ -37,7 +38,7 @@
     font-size:1.3rem;
 }
 .navbar-list:hover{
-    color:orange;
+    color:rgb(17, 175, 193);
     cursor:pointer;
 }
 .timer{
@@ -83,7 +84,7 @@
     color:white;
 }
 #timer-time{
-    font-size: 4.5rem;
+    font-size: 7rem;
     font-weight: bold;
 }
 #minutes,#seconds{

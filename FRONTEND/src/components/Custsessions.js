@@ -33,9 +33,9 @@ const Custsessions = () => {
   return (
     <div className="Addfavorite">
          <div className='addfav-main'>
-      <div className='header'>
-        <p id='header-medi'>Meditation Timer</p>
-        <p id='header-about'>About</p>
+      <div className='header-cust'>
+        <p id='header-cust-medi'>Meditation Timer</p>
+        <p id='header-cust-about'>About</p>
       </div>
       </div>
         <center>

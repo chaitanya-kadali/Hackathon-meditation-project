@@ -115,9 +115,9 @@ const Loggedin= () => {
 
   return (
     <div className='Guest'>
-     <div className='header'>
-       <p id='header-medi'>Meditation Timer</p>
-       <p id='header-about'>About</p>
+     <div className='headr'>
+       <p id='headr-medi'>Meditation Timer</p>
+       <p id='headr-about'>About</p>
      </div>
      <div className='navbar'>
         

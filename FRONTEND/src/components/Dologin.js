@@ -38,9 +38,9 @@ const gotoab=()=>{
 
   return (
     <div className='signup-div'>
-       <div className='header'>
-       <p id='header-medi'>Meditation Timer</p>
-       <p id='header-about' onClick={gotoab}>About</p>
+       <div className='heder'>
+       <p id='heder-medi'>Meditation Timer</p>
+       <p id='heder-about' onClick={gotoab}>About</p>
      </div>
       <center>  
         <div className='login-form'>
@@ -50,6 +50,7 @@ const gotoab=()=>{
         placeholder='Enter Email Id'
         value={user.email}
         name="email" 
+        id="login-in-mail"
         className="login-input"
         onChange={changeHandler}/>
         <br/>
