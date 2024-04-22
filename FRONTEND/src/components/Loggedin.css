@@ -55,7 +55,7 @@
 }
 .favorites{
     background-color: rgba(225, 197, 197, 0.523);
-    width:25vw;
+    width:35vw;
     margin-top:50px;
     height:50vh;
     border-radius: 30px;
@@ -66,15 +66,17 @@
     font-size:1.6rem;
 }
 #favorites-list{
-    font-size:1.0rem;
-    font-family: Arial;
+    font-size:1.29rem;
+    font-family: 'Garamond', serif;
+
     padding:10px;
+    letter-spacing: -.01em;
     /* -webkit-text-stroke: 0.05px rgb(255, 255, 255);  */
 }
 #favorites-addses{
     font-size: 1.2rem;
     font-weight:600;
-    background-color: grey;
+    background-color:rgb(17, 175, 193); /* changing color*/
     width:140px;
     cursor: pointer;
     margin-top: 5px;
@@ -90,12 +92,80 @@
 #minutes,#seconds{
     cursor:pointer;
 }
-#button-str,#button-reset,.button-minset{
-    font-size:1.4rem;
-    margin:10px;
-    border-radius:7px;
-    cursor:pointer;
+#button-stres,.button-minset,#addses-btn{
+    margin-top:15px;
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 30px;    
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.2s, color 0.3s;
+    background-color: #fff;
+    color:black;
 }
+#button-stres:hover ,.button-minset:hover,#addses-btn:hover{
+    background-color:rgb(17, 175, 193);
+}
+/* #addses-btn{
+    margin-top:15px;
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.2s, color 0.3s;
+    background-color: rgb(17, 175, 193);
+}
+#addses-btn:hover{
+    background-color:rgb(162, 229, 236);
+} */
+#del-ses-btn{
+    margin-top:15px;
+    display: inline-block;
+    padding: 8px 13px;
+    font-size: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.2s, color 0.3s;
+    background-color: #b71c1c;
+    color: #fff;
+}
+#del-ses-btn:hover{
+    background-color:#8c1818;
+}
+#set-ses-btn{
+    margin-top:15px;
+    display: inline-block;
+    padding: 8px 13px;
+    font-size: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.2s, color 0.3s;
+    background-color: #2e8b57;
+    color: #fff;
+}
+#set-ses-btn:hover{
+    background-color:#3cb371;
+   
+}
+
+
 .bells{
     width:30px;
     height:20px;

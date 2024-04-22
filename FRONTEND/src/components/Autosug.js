@@ -1,13 +1,11 @@
 import React, { useState,useEffect } from 'react';
 import './Autosug.css';
 import axios from 'axios';
-
+ 
 function Autosug() {
  var [UserInfo, setUserInfo] = useState([]);
   // Fetch userinfo from the server on component mount
-  useEffect(() => {
-    retAgeofUser();       // runs it by birth automatically
-  }, []);
+  
 
 
   const queryParams = new URLSearchParams(window.location.search);  // recieving all values sent through url bu ANY one
@@ -24,7 +22,9 @@ const retAgeofUser=async()=>
     }
 }
 
- 
+useEffect( ()=>{ // removed arrow func style
+retAgeofUser();      // runs it by birth automatically
+}, []);
   const [sugdur, setDur] = useState("--");
   const sugDur = async() => {
     let duration;
@@ -71,7 +71,10 @@ const retAgeofUser=async()=>
                  <br></br>
                  <h2> {sugdur}</h2>
                 <button onClick={sugDur} id="sug-but">Suggest Duration</button>
+                <br></br>
+                <p id="note"><strong>Note: This meditation duration Suggested based on your age {UserInfo.age} years that you've  entered during Registration.</strong></p>
            </div>
+
         </center>
       
     </div>
