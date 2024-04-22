@@ -18,23 +18,26 @@
     color:white;
     padding-top:15px;
 }
-.nav-div{
-    display:flex;
-   
-    
-}
+/* .nav-div{
+ display:flex;    
+} */
 .nav-div-li{
-    list-style-type: none;
-    margin-right :20px;
-    background-color: green;
-    height: 35px;
-    width:120px;
-    text-align: center;
-    border-radius:15px;
-    margin-top:16px;
-    font-weight:bold;
-    align-items: center;
-    padding-top:5px;
+    margin-top:10px;
+    display: inline-block;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 30px;    
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.2s, color 0.3s;
+    background-color: rgb(17, 175, 193);
+    color:black;
+}
+.nav-div-li:hover{
+    background-color:#fff;
 }
 .home-meditation{
     width:50vw;
@@ -60,10 +63,10 @@
     font-weight:bolder;
 
 }
-.nav-div-li:hover{
+/* .nav-div-li:hover{
     color:rgba(51, 9, 9, 0.723);
     cursor:pointer;
-}
+} */
 #nav-div-adv{
     width:185px;
 }

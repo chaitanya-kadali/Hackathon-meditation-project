@@ -1,12 +1,16 @@
-import React,{useState} from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
+
 import './Custsessions.css';
 
 const Custsessions = () => {
+  const queryParams = new URLSearchParams(window.location.search);  // recieving all values sent through url bu ANY one
+  var emailog = queryParams.get('email');
+  // successfully fetched email . checked 
     const [favorite,Setfavorite]=useState({
         title:'',
-        min:0,
-        sec:0,
+        min:null,
+        sec:null,
         email:''
     });
 
@@ -17,12 +21,12 @@ const Custsessions = () => {
     const handleSubmit=(e)=>{
         e.preventDefault();
         try{
-            // favorite.email=email;
+            favorite.email=emailog;
             axios.post('http://localhost:5000/favsess',favorite).then(response=>{
                 alert("Favorite Succesfully Added!");
                 Setfavorite({title:'',min:'',sec:'',email:''});
                 /*redirect to loggedin */
-                window.location.href='/loggedin';
+                window.location.href=`/loggedin?email=${emailog}`;
             })
         }
         catch(error)
@@ -30,6 +34,7 @@ const Custsessions = () => {
             console.log('Error sending registration request',error);
         }
     };
+
   return (
     <div className="Addfavorite">
          <div className='addfav-main'>
@@ -42,12 +47,12 @@ const Custsessions = () => {
            <form class="form" onSubmit={handleSubmit}>
      <input class="form-col" type="text" placeholder='Enter the Title' name='title' value={favorite.title} onChange={changeHandler} />
      <br/>
+     
         <input class="form-col" type="text" placeholder='Enter number of minutes'name='min' value={favorite.min} onChange={changeHandler} />
         <br/>
         <input class="form-col" type="text" placeholder='Enter number of seconds' name='sec' value={favorite.sec} onChange={changeHandler} />
         <br/>
-        <input class="form-col" type="text" placeholder='Enter email' name='email' value={favorite.email} onChange={changeHandler} />
-       <br/>
+  
        <button id="addfav-btn">Add the favorite</button> 
        </form>
        </center>

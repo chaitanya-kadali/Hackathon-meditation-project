@@ -1,6 +1,4 @@
     import React from "react";
-// import {BrowserRouter,Routes,Route} from "react-router-dom";
-//import { Link } from "react-router-dom";
 import './Home.css';
 const Home=()=>{
     const toreg=()=>{
@@ -16,6 +14,7 @@ return(
                 <p id="home-head-medit">Meditation Timer</p>
                 <div className="nav-div">
                    <li onClick={toguest} className="nav-div-li">Basic Features</li>
+                   <span>{`\t`}</span>
                      <li onClick={toreg} className="nav-div-li" id="nav-div-adv">Advanced Features</li>
                 </div>
             </div>

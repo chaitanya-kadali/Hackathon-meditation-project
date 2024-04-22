@@ -28,7 +28,7 @@
     margin-top:50px;
     background-color: rgba(48, 131, 161, 0.516);
     width:45vw;
-    height:25vh;
+    height:30vh;
     border-radius: 25px;
 }
 #sug-but{
@@ -49,3 +49,11 @@
 #sug-but:hover {
     background-color: rgb(17, 175, 193); /* Darker green */
   }
+#note{
+    color: rgb(20, 58, 70);
+    text-shadow: 
+    -1px -1px 0 #fff,  
+     1px -1px 0 #fff,
+    -1px  1px 0 #fff,
+     1px  1px 0 #fff;
+}

@@ -3,8 +3,7 @@ import './Loggedin.css'
 import audioFile1 from './media/bell-1.wav'
 import audioFile2 from './media/bell-2.wav'
 import audioFile3 from './media/bell-3.mpeg'
-import { useLocation } from 'react-router-dom';
-import { useParams } from 'react-router-dom';
+
 import axios from 'axios';
 const Loggedin= () => {
 
@@ -57,9 +56,7 @@ const Loggedin= () => {
     setSeconds(totalSeconds % 60);
   }, [totalSeconds]);
   var [favSesses, setFavSess] = useState([]);
-  useEffect(() => {
-    getFavSess();       // runs it by birth automatically
-  }, []);
+  
 
   const getFavSess=async()=>{
     try {
@@ -70,6 +67,9 @@ const Loggedin= () => {
       console.log("favsess not found");
     }
   }
+  useEffect(()=>{
+    getFavSess()       // runs it by birth automatically
+}, []);
   const handleStartStop = () => {
     setIsRunning(!isRunning);
   };
@@ -103,16 +103,27 @@ const Loggedin= () => {
     window.location.href='/loggedin/meditation';
   }
   const clickAdd=()=>{
-    window.location.href='/loggedin/addfav';
+    window.location.href=`/loggedin/addfav?email=${emailog}`;
   }
   
   const autogo=()=>{
     window.location.href=`/loggedin/Autosug?email=${emailog}`;   //  throwing email for automatic dur suggester
   }
-  const onDeleteFav=(fid)=>{
-    alert("under construction ");
+  const onDeleteFav=async (fid)=>{
+    try {
+      await axios.delete(`http://localhost:5000/favsess/${fid}`);
+      getFavSess();
+    } catch (error) {
+      console.error('Error deleting fav session:', error);
+    }
   }
+  const onSetFav=(minp,secp)=>{
+    setMinutes(minp);
+    setSeconds(secp)
+    const tsecp =(minp*60) +secp;
+setTotalSeconds(tsecp);
 
+  }
   return (
     <div className='Guest'>
      <div className='headr'>
@@ -139,8 +150,9 @@ const Loggedin= () => {
         <label htmlFor="seconds">Sec: </label>
         <input id="seconds" type="range" min="0" max="59" step="1" value={seconds} onChange={handleSecondChange} />
       </div>
-      <button id='button-str' onClick={handleStartStop}>{isRunning ? 'Stop' : 'Start'}</button>
-      <button id='button-reset' onClick={handleReset}>Reset</button>
+      <button id='button-stres' onClick={handleStartStop}>{isRunning ? 'Stop' : 'Start'}</button>
+      <span> {`\t`}</span>
+      <button id='button-stres' onClick={handleReset}>Reset</button>
       <div className='button-timer'></div>
       <button className='button-minset' onClick={handleMinuteChange1} value={5} >5min</button>
       <button  className='button-minset' onClick={handleMinuteChange1} value={10} >10min</button>
@@ -157,16 +169,18 @@ const Loggedin= () => {
       </div>
       <div className="favorites">
         <center><p id="favorites-tag"> Favorites</p></center>
-        <center><p id="favorites-addses" onClick={clickAdd}>Add sessions</p></center>
-        <p id="favorites-list">the favsess list  is here
+        <center><p id="addses-btn" onClick={clickAdd}>Add sessions</p></center>
+        <p id="favorites-list"> <strong>The favsess list  is here
         { favSesses.map( (each_elem)=>(
                                 <li key={each_elem._id}>
-                                Title - {each_elem.title} {"->"} {each_elem.min}mins : {each_elem.sec} secs{' '}
-                                <button onClick={() => onDeleteFav(each_elem._id)}>Delete</button>
+                                Title - {each_elem.title} {" -"} {each_elem.min}mins : {each_elem.sec} secs{' '}
+                                <button id="del-ses-btn" onClick={() => onDeleteFav(each_elem._id)}>Delete</button> {'   '}
+                                <button id="set-ses-btn" onClick={() => onSetFav(each_elem.min,each_elem.sec)}>Set</button>
                               </li>
                             )
                         )
-         }</p>
+         }</strong>
+         </p>
 
       </div>
 

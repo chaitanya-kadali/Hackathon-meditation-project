@@ -65,7 +65,7 @@ const gotoab=()=>{
         <br/>
         <button id="login-sub">Submit</button>
       </form>
-      <Link id="login-link" to='/Registration'>Not Registred? Go to register</Link>
+      <Link id="login-link" to='/Registration'><strong>Not Registred? Go to register </strong></Link>
       </div>
       <br/>
       <></>
